@@ -1,0 +1,22 @@
+server:
+  port: 3001
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+
+jwt:
+  secret: DAKjfg1ndlmkngl6jeEOlgkdslmsd;gl78LGlcdkni27NKmksdhfPcdlgfr7vdkhgrpOgmflbfY
